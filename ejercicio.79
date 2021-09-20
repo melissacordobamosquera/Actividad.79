@@ -1,0 +1,36 @@
+function arctan = arctan(x,n)
+  SUMA = 0
+  OP = 0
+  for i = 1:n
+    OPE = (-1)^(i+1)*(x^(2*i-1))/(2*i-1)
+    SUMA = OPE + SUMA 
+  endfor
+  disp(SUMA)
+endfunction  
+
+ #Punto a
+ 
+aprox = 4*0.7851  
+aprox
+
+
+#Punto b
+
+error = 3.1416 - aprox      #Solo una visualizacion
+x=1   #valor de x
+N = 2000    #Cantidad de la sumatoria
+SUMA = 0    #Contador
+C = 0    #Contador
+
+for i = 1:N  
+    OP = (-1)^(i+1)*(x^(2*i-1))/(2*i-1)
+    SUMA = SUMA + OP
+    C = C+1
+    if abs(3.1416 - 4*SUMA) <= 0.001     #Error
+      disp(SUMA) 
+      disp(C)
+      break       #Detiene el for
+    endif
+endfor 
+
+
